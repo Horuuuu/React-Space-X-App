@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { fetchHystory } from "./api";
+import DateInput from "./components/DateInput";
+import MissionCard from "./components/MissionCard";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const [data, SetData] = useState([]);
+
+  const getHistory = async () => {
+    const history = await fetchHystory({
+      start: startDate,
+      end: endDate
+    });
+    SetData(history);
+  };
+  useEffect(() => {
+    getHistory();
+  }, [startDate, endDate]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="title">Historial de Space X </h1>
+
+      <div className="filters">
+        <DateInput
+          label="Fecha de comienzo"
+          onChange={(e) => setStartDate(e.target.value)}
+        />
+
+        <DateInput
+          label ="Fecha de final"
+          onChange={(e) => setEndDate(e.target.value)}
+        />
+      </div>
+
+      <div className="mission-list">
+        {data.map((item, index) => {
+          return <MissionCard key={index} mission={item} />;
+        })}
+      </div>
     </div>
   );
 }
 
-export default App;
