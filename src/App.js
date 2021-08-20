@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <div>
-      <h1 className="title">Historial de Space X </h1>
+      <h1 className="title">Historial de Misiones de Space X </h1>
 
       <div className="filters">
         <DateInput
