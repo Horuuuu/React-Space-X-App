@@ -1,4 +1,4 @@
-<h3>Buscador de misiones  </h3>
+<h3>:star2:Buscador de misiones :star: </h3>
 Dos componentes:
 
 <ul>
