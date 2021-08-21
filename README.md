@@ -5,7 +5,7 @@ Dos componentes:
   <li>DateInput</li>
   <li>MissionCard</li>
   </ul>
-La estructura de la Api(que sugeria el sitio)  la modifiqué utilizando el bloque try y catch en lugar de then   y la petición, la hice a travez de <strong>Fetch</strong>.Para que se ejecute los datos apenas carga la aplicación usé  <strong>useEffect</strong> y tambien para que obtenga los datos cada vez que cambia las fechas.
+La estructura de la Api(que sugería el sitio)  la modifiqué utilizando el bloque try y catch en lugar de then   y la petición, la hice a travez de <strong>Fetch</strong>.Para que se ejecute los datos apenas carga la aplicación usé  <strong>useEffect</strong> y tambien para que obtenga los datos cada vez que cambia las fechas.
 
 ```
 var requestOptions = {
